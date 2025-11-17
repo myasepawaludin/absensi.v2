@@ -9,4 +9,13 @@ class ListStudents extends ListRecords
 {
     protected static string $resource = StudentResource::class;
 
+    public function getTitle(): string
+    {
+        return 'Data Siswa | Sistem Absensi SMK BINUSA';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Data Siswa';
+    }
 }

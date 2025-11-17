@@ -33,7 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->profile(\App\Filament\Pages\CustomProfile::class)
             ->emailVerification()
             ->brandLogo(fn () => view('filament.sidebar-brand'))
-            ->brandName('')
+            ->brandName('Sistem Absensi SMK BINUSA')
             ->colors([
                 'primary' => Color::Blue,
                 'danger'  => Color::Red,
@@ -42,7 +42,7 @@ class AdminPanelProvider extends PanelProvider
                 'success' => Color::Green,
                 'warning' => Color::Amber,
             ])
-            ->favicon(asset('favicon.ico'))
+            ->favicon(asset('images/binusa.png') . '?v=1')
             ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
                 $user = auth()->user();
 
@@ -103,6 +103,7 @@ class AdminPanelProvider extends PanelProvider
             })
             ->renderHook('panels::footer', fn () => view('filament.footer'))
             ->renderHook('panels::head.end', fn () => view('filament.custom-login-styles'))
+            ->renderHook('panels::body.end', fn () => view('filament.fix-dashboard-heading'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([

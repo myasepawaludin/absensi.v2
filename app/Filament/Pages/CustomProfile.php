@@ -9,6 +9,16 @@ use Filament\Pages\Auth\EditProfile as BaseEditProfile;
 
 class CustomProfile extends BaseEditProfile
 {
+    public function getTitle(): string
+    {
+        return 'Sistem Absensi SMK BINUSA | Profil';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Profil';
+    }
+
     public function form(Form $form): Form
     {
         return $form

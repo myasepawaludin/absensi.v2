@@ -10,6 +10,16 @@ class EditTeacher extends EditRecord
 {
     protected static string $resource = TeacherResource::class;
 
+    public function getTitle(): string
+    {
+        return 'Edit Guru | Sistem Absensi SMK BINUSA';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Edit Guru';
+    }
+
     protected function getHeaderActions(): array
     {
         return [

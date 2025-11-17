@@ -24,6 +24,16 @@ class MyAttendance extends Page implements HasTable
         return auth()->check() && auth()->user()->role === 'siswa';
     }
 
+    public function getTitle(): string
+    {
+        return 'Absensi Saya | Sistem Absensi SMK BINUSA';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Riwayat Absensi Saya';
+    }
+
     public function table(Table $table): Table
     {
         $student = auth()->user()->student;

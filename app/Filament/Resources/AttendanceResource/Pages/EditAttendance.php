@@ -10,6 +10,16 @@ class EditAttendance extends EditRecord
 {
     protected static string $resource = AttendanceResource::class;
 
+    public function getTitle(): string
+    {
+        return 'Edit Absen | Sistem Absensi SMK BINUSA';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Edit Absen';
+    }
+
     protected function getHeaderActions(): array
     {
         return [

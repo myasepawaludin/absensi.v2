@@ -10,6 +10,16 @@ class EditStudent extends EditRecord
 {
     protected static string $resource = StudentResource::class;
 
+    public function getTitle(): string
+    {
+        return 'Edit Siswa | Sistem Absensi SMK BINUSA';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Edit Siswa';
+    }
+
     protected function getHeaderActions(): array
     {
         return [

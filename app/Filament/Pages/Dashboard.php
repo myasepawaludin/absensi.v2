@@ -22,7 +22,7 @@ class Dashboard extends BaseDashboard
     // Override getTitle() - Untuk browser tab title
     public function getTitle(): string | \Illuminate\Contracts\Support\Htmlable
     {
-        return 'Beranda';
+        return 'Sistem Absensi SMK BINUSA | Beranda';
     }
 
     // Override getNavigationLabel() - Untuk sidebar

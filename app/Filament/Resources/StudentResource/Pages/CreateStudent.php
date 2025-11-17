@@ -9,4 +9,14 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateStudent extends CreateRecord
 {
     protected static string $resource = StudentResource::class;
+
+    public function getTitle(): string
+    {
+        return 'Tambah Siswa | Sistem Absensi SMK BINUSA';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Tambah Siswa';
+    }
 }

@@ -10,6 +10,16 @@ class CreateAttendance extends CreateRecord
 {
     protected static string $resource = AttendanceResource::class;
 
+    public function getTitle(): string
+    {
+        return 'Tambah Absen | Sistem Absensi SMK BINUSA';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Tambah Absen';
+    }
+
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         if (isset($data['student_id'])) {

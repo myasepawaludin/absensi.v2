@@ -9,4 +9,14 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateTeacher extends CreateRecord
 {
     protected static string $resource = TeacherResource::class;
+
+    public function getTitle(): string
+    {
+        return 'Tambah Guru | Sistem Absensi SMK BINUSA';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Tambah Guru';
+    }
 }

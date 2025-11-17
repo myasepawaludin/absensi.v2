@@ -30,6 +30,16 @@ class AttendanceRecap extends Page implements HasTable
         return in_array(auth()->user()?->role, ['admin', 'guru']);
     }
 
+    public function getTitle(): string
+    {
+        return 'Sistem Absensi SMK BINUSA | Rekap Absen Siswa';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Rekap Absen Siswa';
+    }
+
     public function table(Table $table): Table 
     {
         return $table

@@ -8,4 +8,14 @@ use Filament\Resources\Pages\ListRecords;
 class ListAdmins extends ListRecords
 {
     protected static string $resource = AdminResource::class;
+
+    public function getTitle(): string
+    {
+        return 'Kelola Admin | Sistem Absensi SMK BINUSA';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Kelola Admin';
+    }
 }
