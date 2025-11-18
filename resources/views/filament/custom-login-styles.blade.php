@@ -42,8 +42,9 @@
         margin-bottom: 1rem !important;
     }
 
+    /* Heading mobile - LEBIH KECIL */
     .fi-simple-header-heading {
-        font-size: 1.5rem !important;
+        font-size: 1.125rem !important; /* Dari 1.5rem jadi 1.125rem (18px) */
         margin-bottom: 0.75rem !important;
         font-weight: 700 !important;
     }

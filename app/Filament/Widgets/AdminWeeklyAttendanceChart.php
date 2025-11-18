@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminWeeklyAttendanceChart extends ChartWidget
 {
-    protected static ?string $heading = 'Tren Kehadiran Bulan Ini (Semua Kelas)';
+    protected static ?string $heading = 'Tren Kehadiran Bulan Ini';
     protected static ?int $sort = 5;
     protected static ?string $maxHeight = '300px';
     protected int | string | array $columnSpan = 1;

@@ -9,7 +9,7 @@ use Illuminate\Support\Carbon;
 
 class AdminAttendanceCompositionChart extends ChartWidget
 {
-    protected static ?string $heading = 'Komposisi Kehadiran Bulan Ini (Semua Kelas)';
+    protected static ?string $heading = 'Komposisi Kehadiran Bulan Ini';
     protected static ?int $sort = 6;
     protected static ?string $maxHeight = '300px';
     protected int | string | array $columnSpan = 1;
