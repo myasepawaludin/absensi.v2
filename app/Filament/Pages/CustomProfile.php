@@ -9,6 +9,8 @@ use Filament\Pages\Auth\EditProfile as BaseEditProfile;
 
 class CustomProfile extends BaseEditProfile
 {
+    protected static string $view = 'filament.pages.custom-profile';
+
     public function getTitle(): string
     {
         return 'Sistem Absensi SMK BINUSA | Profil';
