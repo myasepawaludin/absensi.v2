@@ -27,6 +27,78 @@
         }
     </style>
 
+    <script>
+        (function() {
+            'use strict';
+
+            // Fungsi untuk memuat email dari localStorage
+            function loadSavedEmail() {
+                const savedEmail = localStorage.getItem('remembered_email');
+                const rememberMe = localStorage.getItem('remember_me');
+
+                if (savedEmail && rememberMe === 'true') {
+                    setTimeout(() => {
+                        const emailInput = document.querySelector('input[type="email"]');
+                        const rememberCheckbox = document.querySelector('input[type="checkbox"]');
+
+                        if (emailInput) {
+                            emailInput.value = savedEmail;
+                            emailInput.dispatchEvent(new Event('input', { bubbles: true }));
+                            emailInput.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+
+                        if (rememberCheckbox && !rememberCheckbox.checked) {
+                            rememberCheckbox.checked = true;
+                            rememberCheckbox.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                    }, 150);
+                }
+            }
+
+            // Fungsi untuk menyimpan email saat submit
+            function handleFormSubmit() {
+                const emailInput = document.querySelector('input[type="email"]');
+                const rememberCheckbox = document.querySelector('input[type="checkbox"]');
+
+                if (emailInput && rememberCheckbox) {
+                    if (rememberCheckbox.checked) {
+                        localStorage.setItem('remembered_email', emailInput.value);
+                        localStorage.setItem('remember_me', 'true');
+                    } else {
+                        localStorage.removeItem('remembered_email');
+                        localStorage.removeItem('remember_me');
+                    }
+                }
+            }
+
+            // Fungsi untuk handle perubahan checkbox
+            function handleCheckboxChange(event) {
+                if (event.target.type === 'checkbox') {
+                    if (!event.target.checked) {
+                        localStorage.removeItem('remembered_email');
+                        localStorage.removeItem('remember_me');
+                    }
+                }
+            }
+
+            // Event listener saat DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadSavedEmail);
+            } else {
+                loadSavedEmail();
+            }
+
+            // Event listener untuk Livewire navigation
+            document.addEventListener('livewire:navigated', loadSavedEmail);
+
+            // Event listener untuk form submit
+            document.addEventListener('submit', handleFormSubmit, true);
+
+            // Event listener untuk checkbox change
+            document.addEventListener('change', handleCheckboxChange, true);
+        })();
+    </script>
+
     @if (filament()->hasLogin())
         <x-slot name="heading">
             {{ __('filament-panels::pages/auth/login.heading') }}
