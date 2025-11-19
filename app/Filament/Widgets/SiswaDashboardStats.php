@@ -9,8 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class SiswaDashboardStats extends BaseWidget
 {
-    protected static ?int $sort = 1; // DITAMBAHKAN
-    protected int | string | array $columnSpan = 'full'; // DITAMBAHKAN
+    protected static ?int $sort = 1;
+
+    // TAMBAHKAN METHOD INI
+    public function getColumns(): int
+    {
+        return 4;
+    }
 
     protected function getStats(): array
     {
@@ -68,6 +73,6 @@ class SiswaDashboardStats extends BaseWidget
     public static function canView(): bool
     {
         $user = auth()->user();
-        return $user && $user->role === 'siswa'; // Bukan $user->siswa, tapi $user->role
+        return $user && $user->role === 'siswa';
     }
 }

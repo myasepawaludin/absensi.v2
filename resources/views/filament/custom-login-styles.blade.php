@@ -1,13 +1,13 @@
 <style>
     /* ==========================================
-       LOGIN PAGE - Desktop: Narrow & Perfect Height, Mobile: Normal
+       LOGIN PAGE - Mobile Kompak, Desktop Sempit
        ========================================== */
 
-    /* Login Container - More Narrow */
+    /* Login Container - JAUH LEBIH SEMPIT */
     .fi-simple-main {
-        max-width: 90% !important;
-        width: 100% !important;
-        border-radius: 1rem !important; /* Rounded di mobile */
+        max-width: 300px !important; /* LEBIH SEMPIT dari 320px */
+        width: 88% !important;
+        border-radius: 0.625rem !important;
     }
 
     @media (min-width: 480px) {
@@ -23,85 +23,90 @@
     }
 
     /* ==========================================
-       MOBILE - Ukuran Normal & Nyaman (Default)
+       MOBILE - Lebih Kompak & Tidak Terlalu Tinggi
        ========================================== */
     
-    /* Main container padding mobile */
+    /* Main container padding mobile - SANGAT KECIL */
     .fi-simple-main {
-        padding: 1.5rem 1.75rem !important;
-        margin-top: 4rem !important;
-        margin-bottom: 4rem !important;
+        padding: 0.625rem 0.875rem !important; /* SUPER KECIL! */
+        margin-top: 1.25rem !important; /* SUPER KECIL! */
+        margin-bottom: 1.25rem !important;
     }
 
-    /* Logo & Header mobile */
+    /* Logo & Header mobile - SANGAT KOMPAK */
     .fi-simple-header {
-        margin-bottom: 1rem !important;
+        margin-bottom: 0.25rem !important; /* SUPER KECIL! */
     }
 
     .fi-logo {
-        margin-bottom: 1rem !important;
+        margin-bottom: 0.75rem !important; /* LEBIH BESAR untuk space seperti desktop */
     }
 
-    /* Heading mobile - LEBIH KECIL */
+    /* Heading mobile - SANGAT Kecil */
     .fi-simple-header-heading {
-        font-size: 1.125rem !important; /* Dari 1.5rem jadi 1.125rem (18px) */
-        margin-bottom: 0.75rem !important;
+        font-size: 0.9375rem !important; /* SUPER KECIL! */
+        margin-bottom: 0.25rem !important; /* SUPER KECIL! */
         font-weight: 700 !important;
+        margin-top: 0.5rem !important; /* TAMBAH space di atas heading */
     }
 
-    /* Form section mobile */
+    /* Form section mobile - SANGAT KECIL */
     .fi-simple-page section {
-        gap: 1.25rem !important;
+        gap: 0.375rem !important; /* SUPER KECIL! */
     }
 
-    /* Field wrapper mobile */
+    /* Field wrapper mobile - SANGAT KOMPAK */
     .fi-fo-field-wrp {
-        margin-bottom: 1rem !important;
+        margin-bottom: 0.25rem !important; /* SUPER KECIL! */
     }
 
     /* Label mobile */
     .fi-fo-field-wrp-label {
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0.1875rem !important; /* SUPER KECIL! */
     }
 
     .fi-fo-field-wrp-label span {
-        font-size: 0.9375rem !important;
+        font-size: 0.75rem !important; /* SUPER KECIL! */
         font-weight: 500 !important;
     }
 
-    /* Input wrapper mobile - rounded */
+    /* Input wrapper mobile - SANGAT RENDAH */
     .fi-input-wrp {
-        padding: 0.75rem 1rem !important;
-        min-height: 3rem !important;
-        border-radius: 0.75rem !important; /* Rounded input mobile */
+        padding: 0.375rem 0.5rem !important; /* SUPER KECIL! */
+        min-height: 2rem !important; /* SUPER RENDAH! */
+        border-radius: 0.5rem !important;
     }
 
     .fi-input {
-        font-size: 1rem !important;
-        line-height: 1.5 !important;
-        padding-top: 0.375rem !important;
-        padding-bottom: 0.375rem !important;
+        font-size: 0.75rem !important; /* SUPER KECIL! */
+        line-height: 1.3 !important;
+        padding-top: 0.1875rem !important;
+        padding-bottom: 0.1875rem !important;
     }
 
-    /* Button mobile - rounded */
+    /* Button mobile - SANGAT RENDAH */
     .fi-btn {
-        padding: 0.75rem 1.25rem !important;
-        font-size: 1rem !important;
-        min-height: 3rem !important;
+        padding: 0.375rem 0.625rem !important; /* SUPER KECIL! */
+        font-size: 0.75rem !important; /* SUPER KECIL! */
+        min-height: 2rem !important; /* SUPER RENDAH! */
         font-weight: 600 !important;
-        border-radius: 0.75rem !important; /* Rounded button mobile */
+        border-radius: 0.5rem !important;
     }
 
-    /* Checkbox mobile - rounded */
+    /* Checkbox mobile */
     .fi-checkbox-input {
-        width: 1.125rem !important;
-        height: 1.125rem !important;
-        border-radius: 0.375rem !important; /* Rounded checkbox mobile */
+        width: 0.875rem !important; /* SUPER KECIL! */
+        height: 0.875rem !important;
+        border-radius: 0.25rem !important;
     }
 
-    /* Form actions mobile */
+    .fi-fo-checkbox span {
+        font-size: 0.75rem !important; /* SUPER KECIL! */
+    }
+
+    /* Form actions mobile - SANGAT KECIL */
     .fi-form-actions {
-        margin-top: 1.25rem !important;
+        margin-top: 0.375rem !important; /* SUPER KECIL! */
     }
 
     /* ==========================================
@@ -114,7 +119,7 @@
             padding: 0.75rem 1.125rem 0.875rem !important;
             margin-top: 2rem !important;
             margin-bottom: 2rem !important;
-            border-radius: 0.75rem !important; /* Rounded di desktop juga */
+            border-radius: 0.75rem !important;
         }
 
         /* Logo & Header - compact with space */
@@ -124,7 +129,7 @@
 
         .fi-logo {
             height: 1.875rem !important;
-            margin-bottom: 0.5rem !important;
+            margin-bottom: 0.75rem !important; /* SAMA DENGAN MOBILE */
         }
 
         .fi-logo img {
@@ -142,7 +147,7 @@
             margin-bottom: 0.4rem !important;
             font-weight: 700 !important;
             line-height: 1.35 !important;
-            margin-top: 0.3rem !important;
+            margin-top: 0.5rem !important; /* SAMA DENGAN MOBILE */
         }
 
         /* Form section - balanced spacing */
@@ -174,7 +179,7 @@
         .fi-input-wrp {
             padding: 0.45rem 0.75rem !important;
             min-height: 2.25rem !important;
-            border-radius: 0.5rem !important; /* Rounded input desktop */
+            border-radius: 0.5rem !important;
         }
 
         .fi-input {
@@ -194,7 +199,7 @@
             width: 1.75rem !important;
             height: 1.75rem !important;
             margin: 0 !important;
-            border-radius: 0.375rem !important; /* Rounded icon button */
+            border-radius: 0.375rem !important;
         }
 
         .fi-icon-btn-icon {
@@ -208,7 +213,7 @@
             font-size: 0.84375rem !important;
             min-height: 2.25rem !important;
             font-weight: 600 !important;
-            border-radius: 0.5rem !important; /* Rounded button desktop */
+            border-radius: 0.5rem !important;
             gap: 0.35rem !important;
         }
 
@@ -225,7 +230,7 @@
         .fi-checkbox-input {
             width: 0.96875rem !important;
             height: 0.96875rem !important;
-            border-radius: 0.25rem !important; /* Rounded checkbox desktop */
+            border-radius: 0.25rem !important;
         }
 
         .fi-fo-checkbox span {

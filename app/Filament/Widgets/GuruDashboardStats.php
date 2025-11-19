@@ -10,8 +10,13 @@ use Illuminate\Support\Facades\Auth;
 
 class GuruDashboardStats extends BaseWidget
 {
-    protected static ?int $sort = 1; // DITAMBAHKAN
-    protected int | string | array $columnSpan = 'full'; // DITAMBAHKAN
+    protected static ?int $sort = 1;
+
+    // TAMBAHKAN METHOD INI
+    public function getColumns(): int
+    {
+        return 4;
+    }
 
     protected function getStats(): array
     {
