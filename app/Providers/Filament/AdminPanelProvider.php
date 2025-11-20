@@ -123,6 +123,7 @@ class AdminPanelProvider extends PanelProvider
             ->renderHook('panels::head.end', fn () => view('filament.custom-login-styles'))
             ->renderHook('panels::head.end', fn () => view('filament.navigation-group-color'))
             ->renderHook('panels::head.end', fn () => view('filament.show-username'))
+            ->renderHook('panels::head.end', fn () => view('filament.sidebar-collapse-icon'))
             ->renderHook('panels::body.end', fn () => view('filament.fix-dashboard-heading'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
