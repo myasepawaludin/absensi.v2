@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="3;url={{ url('/') }}">
     <title>419 - Sesi Telah Berakhir</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        setTimeout(function() {
+            window.location.href = '{{ url('/') }}';
+        }, 3000);
+    </script>
 </head>
 <body class="bg-gradient-to-br from-orange-50 via-white to-red-50 min-h-screen flex items-center justify-center p-4 sm:p-6">
 

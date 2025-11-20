@@ -15,16 +15,12 @@ return Application::configure(basePath: dirname(__DIR__))
 
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        // Handle error 419 (Page Expired / CSRF Token Mismatch)
         $exceptions->renderable(function (TokenMismatchException $e, $request) {
-            // Jika request dari Livewire, return JSON response dengan status 419
+
             if ($request->header('X-Livewire')) {
-                return response()->json([
-                    'message' => 'Page expired. Please refresh the page.',
-                ], 419);
+                return response()->view('errors.419', [], 200);
             }
 
-            // Untuk request biasa, tampilkan halaman 419
             return response()->view('errors.419', [], 419);
         });
     })->create();
