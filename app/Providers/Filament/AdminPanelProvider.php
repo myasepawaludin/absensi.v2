@@ -101,8 +101,7 @@ class AdminPanelProvider extends PanelProvider
                                     ->icon('heroicon-o-briefcase')
                                     ->url('/admin/majors'),
                             ]),
-                        NavigationGroup::make('Manajemen')
-                            ->icon('heroicon-o-cog-6-tooth')
+                        NavigationGroup::make()
                             ->items([
                                 NavigationItem::make('Rekap Absen')
                                     ->icon('heroicon-o-chart-bar')
