@@ -56,10 +56,13 @@ class AdminPanelProvider extends PanelProvider
                         NavigationItem::make('Data Siswa')
                             ->icon('heroicon-o-users')
                             ->url('/admin/students'),
-                        NavigationItem::make('Kelola Absen Siswa')
-                            ->icon('heroicon-o-clipboard-document')
+                        NavigationItem::make('Absensi Siswa')
+                            ->icon('heroicon-o-clipboard-document-check')
                             ->url('/admin/attendances'),
-                        NavigationItem::make('Rekap Absen Siswa')
+                        NavigationItem::make('Kelola Absen')
+                            ->icon('heroicon-o-clipboard-document-list')
+                            ->url('/admin/attendances'),
+                        NavigationItem::make('Rekap Absen')
                             ->icon('heroicon-o-chart-bar')
                             ->url('/admin/attendance-recap'),
                     ]);
