@@ -49,23 +49,27 @@ class AdminPanelProvider extends PanelProvider
 
                 // MENU GURU
                 if ($user && $user->role === 'guru') {
-                    return $builder->items([
-                        NavigationItem::make('Beranda')
-                            ->icon('heroicon-o-home')
-                            ->url('/admin'),
-                        NavigationItem::make('Data Siswa')
-                            ->icon('heroicon-o-users')
-                            ->url('/admin/students'),
-                        NavigationItem::make('Absensi Siswa')
-                            ->icon('heroicon-o-clipboard-document-check')
-                            ->url('/admin/attendances'),
-                        NavigationItem::make('Kelola Absen')
-                            ->icon('heroicon-o-clipboard-document-list')
-                            ->url('/admin/attendances'),
-                        NavigationItem::make('Rekap Absen')
-                            ->icon('heroicon-o-chart-bar')
-                            ->url('/admin/attendance-recap'),
-                    ]);
+                    return $builder
+                        ->items([
+                            NavigationItem::make('Beranda')
+                                ->icon('heroicon-o-home')
+                                ->url('/admin'),
+                            NavigationItem::make('Data Siswa')
+                                ->icon('heroicon-o-users')
+                                ->url('/admin/students'),
+                        ])
+                        ->groups([
+                            NavigationGroup::make('Absensi Siswa')
+                                ->icon('heroicon-o-clipboard-document-check')
+                                ->items([
+                                    NavigationItem::make('Kelola Absen')
+                                        ->icon('heroicon-o-clipboard-document-list')
+                                        ->url('/admin/attendances'),
+                                    NavigationItem::make('Rekap Absen')
+                                        ->icon('heroicon-o-chart-bar')
+                                        ->url('/admin/attendance-recap'),
+                                ]),
+                        ]);
                 }
 
                 // MENU SISWA
