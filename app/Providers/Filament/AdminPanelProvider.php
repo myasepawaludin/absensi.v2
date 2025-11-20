@@ -8,6 +8,7 @@ use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Navigation\NavigationBuilder;
 use Filament\Navigation\NavigationItem;
+use Filament\Navigation\NavigationGroup;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -77,29 +78,40 @@ class AdminPanelProvider extends PanelProvider
                 }
 
                 // MENU ADMIN (default)
-                return $builder->items([
-                    NavigationItem::make('Beranda')
-                        ->icon('heroicon-o-home')
-                        ->url('/admin'),
-                    NavigationItem::make('Data Guru')
-                        ->icon('heroicon-o-user-group')
-                        ->url('/admin/teachers'),
-                    NavigationItem::make('Data Kelas')
-                        ->icon('heroicon-o-academic-cap')
-                        ->url('/admin/school-classes'),
-                    NavigationItem::make('Data Siswa')
-                        ->icon('heroicon-o-users')
-                        ->url('/admin/students'),
-                    NavigationItem::make('Data Jurusan')
-                        ->icon('heroicon-o-briefcase')
-                        ->url('/admin/majors'),
-                    NavigationItem::make('Rekap Absen')
-                        ->icon('heroicon-o-chart-bar')
-                        ->url('/admin/attendance-recap'),
-                    NavigationItem::make('Kelola Admin')
-                        ->icon('heroicon-o-shield-check')
-                        ->url('/admin/admins'),
-                ]);
+                return $builder
+                    ->items([
+                        NavigationItem::make('Beranda')
+                            ->icon('heroicon-o-home')
+                            ->url('/admin'),
+                    ])
+                    ->groups([
+                        NavigationGroup::make('Data Akademik')
+                            ->icon('heroicon-o-academic-cap')
+                            ->items([
+                                NavigationItem::make('Data Guru')
+                                    ->icon('heroicon-o-user-group')
+                                    ->url('/admin/teachers'),
+                                NavigationItem::make('Data Kelas')
+                                    ->icon('heroicon-o-academic-cap')
+                                    ->url('/admin/school-classes'),
+                                NavigationItem::make('Data Siswa')
+                                    ->icon('heroicon-o-users')
+                                    ->url('/admin/students'),
+                                NavigationItem::make('Data Jurusan')
+                                    ->icon('heroicon-o-briefcase')
+                                    ->url('/admin/majors'),
+                            ]),
+                        NavigationGroup::make('Manajemen')
+                            ->icon('heroicon-o-cog-6-tooth')
+                            ->items([
+                                NavigationItem::make('Rekap Absen')
+                                    ->icon('heroicon-o-chart-bar')
+                                    ->url('/admin/attendance-recap'),
+                                NavigationItem::make('Kelola Admin')
+                                    ->icon('heroicon-o-shield-check')
+                                    ->url('/admin/admins'),
+                            ]),
+                    ]);
             })
             ->renderHook('panels::footer', fn () => view('filament.footer'))
             ->renderHook('panels::head.end', fn () => view('filament.custom-login-styles'))
