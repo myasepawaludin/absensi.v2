@@ -1,55 +1,76 @@
 <style>
-    /* Perbaiki icon collapse/expand sidebar */
+    /* Perbaiki icon collapse/expand sidebar - Chevron Button */
 
-    /* Icon collapse button styling */
-    [x-data*="collapsedSidebarWidth"] button[type="button"] {
-        transition: all 0.2s ease-in-out;
+    /* Target button collapse sidebar */
+    .fi-sidebar-collapse-button,
+    button[x-on\:click*="toggleSidebarCollapse"] {
+        transition: all 0.25s ease-in-out !important;
+        border-radius: 0.5rem !important;
     }
 
     /* Hover effect untuk button */
-    [x-data*="collapsedSidebarWidth"] button[type="button"]:hover {
+    .fi-sidebar-collapse-button:hover,
+    button[x-on\:click*="toggleSidebarCollapse"]:hover {
         background-color: rgb(var(--primary-50)) !important;
-        transform: scale(1.05);
+        transform: translateX(2px) scale(1.05) !important;
     }
 
-    .dark [x-data*="collapsedSidebarWidth"] button[type="button"]:hover {
+    .dark .fi-sidebar-collapse-button:hover,
+    .dark button[x-on\:click*="toggleSidebarCollapse"]:hover {
         background-color: rgb(var(--primary-900)) !important;
     }
 
-    /* Icon SVG styling - perbesar dan perjelas */
-    [x-data*="collapsedSidebarWidth"] button[type="button"] svg {
-        width: 1.25rem !important;
-        height: 1.25rem !important;
-        stroke-width: 2.5 !important;
-        color: rgb(var(--gray-600)) !important;
+    /* Icon SVG Chevron - Perbesar dan pertebal */
+    .fi-icon-btn-icon,
+    button[x-on\:click*="toggleSidebarCollapse"] svg {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+        stroke-width: 3 !important;
+        color: rgb(var(--gray-700)) !important;
+        transition: all 0.25s ease-in-out !important;
     }
 
-    .dark [x-data*="collapsedSidebarWidth"] button[type="button"] svg {
-        color: rgb(var(--gray-300)) !important;
+    .dark .fi-icon-btn-icon,
+    .dark button[x-on\:click*="toggleSidebarCollapse"] svg {
+        color: rgb(var(--gray-200)) !important;
     }
 
-    /* Hover state untuk icon */
-    [x-data*="collapsedSidebarWidth"] button[type="button"]:hover svg {
+    /* Hover state - Icon berubah warna dan lebih tebal */
+    .fi-sidebar-collapse-button:hover .fi-icon-btn-icon,
+    button[x-on\:click*="toggleSidebarCollapse"]:hover svg {
         color: rgb(var(--primary-600)) !important;
-        stroke-width: 2.8 !important;
+        stroke-width: 3.5 !important;
+        transform: translateX(3px) !important;
     }
 
-    .dark [x-data*="collapsedSidebarWidth"] button[type="button"]:hover svg {
+    .dark .fi-sidebar-collapse-button:hover .fi-icon-btn-icon,
+    .dark button[x-on\:click*="toggleSidebarCollapse"]:hover svg {
         color: rgb(var(--primary-400)) !important;
     }
 
     /* Border dan shadow untuk button */
-    [x-data*="collapsedSidebarWidth"] button[type="button"] {
-        border: 1px solid rgb(var(--gray-200)) !important;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    .fi-sidebar-collapse-button,
+    button[x-on\:click*="toggleSidebarCollapse"] {
+        border: 1.5px solid rgb(var(--gray-300)) !important;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08) !important;
     }
 
-    .dark [x-data*="collapsedSidebarWidth"] button[type="button"] {
-        border-color: rgb(var(--gray-700)) !important;
+    .dark .fi-sidebar-collapse-button,
+    .dark button[x-on\:click*="toggleSidebarCollapse"] {
+        border-color: rgb(var(--gray-600)) !important;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important;
     }
 
     /* Active/pressed state */
-    [x-data*="collapsedSidebarWidth"] button[type="button"]:active {
-        transform: scale(0.98);
+    .fi-sidebar-collapse-button:active,
+    button[x-on\:click*="toggleSidebarCollapse"]:active {
+        transform: scale(0.95) !important;
+    }
+
+    /* Path chevron - rounded edges */
+    .fi-icon-btn-icon path,
+    button[x-on\:click*="toggleSidebarCollapse"] svg path {
+        stroke-linecap: round !important;
+        stroke-linejoin: round !important;
     }
 </style>
