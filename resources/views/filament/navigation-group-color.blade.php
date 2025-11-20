@@ -43,7 +43,7 @@
 
     /* Hilangkan padding di navigation items */
     nav.fi-sidebar-nav {
-        padding: 0 !important;
+        padding: 0.75rem 0 0 0 !important;
         margin: 0 !important;
     }
 
@@ -52,6 +52,8 @@
         margin: 0 !important;
         padding-top: 0.625rem !important;
         padding-bottom: 0.625rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 
     /* Hilangkan padding pada button group */
@@ -59,6 +61,8 @@
         margin: 0 !important;
         padding-top: 0.625rem !important;
         padding-bottom: 0.625rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 
     /* Kompakkan list navigation */
