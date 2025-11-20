@@ -50,15 +50,15 @@
     /* Kompakkan navigation item wrapper */
     .fi-sidebar-item-button {
         margin: 0 !important;
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
+        padding-top: 0.625rem !important;
+        padding-bottom: 0.625rem !important;
     }
 
     /* Hilangkan padding pada button group */
     .fi-sidebar-group-button {
         margin: 0 !important;
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
+        padding-top: 0.625rem !important;
+        padding-bottom: 0.625rem !important;
     }
 
     /* Kompakkan list navigation */
